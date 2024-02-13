@@ -14,6 +14,7 @@ lives = 6
 
 #TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
 from hangman_art import logo
+
 print(logo)
 
 #Testing code
@@ -42,11 +43,12 @@ while not end_of_game:
     if guess not in chosen_word:
         #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
         print(f"You guessed {guess}, that's not in the word. You lose a life.")
-        
+
         lives -= 1
         if lives == 0:
             end_of_game = True
             print("You lose.")
+            print("The word you are guessing is: " + chosen_word)
 
     #Join all the elements in the list and turn it into a String.
     print(f"{' '.join(display)}")
